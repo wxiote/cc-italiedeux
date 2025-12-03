@@ -4,7 +4,6 @@
     <div class="content-overlay">
       <div class="hero">
         <h1 class="brand">carto69</h1>
-        <p class="tagline">Cartographie interactive & visualisations géospatiales</p>
       </div>
 
       <div class="project-grid">
@@ -68,24 +67,13 @@ export default {
 }
 
 .brand {
-  font-size: 72px;
-  font-weight: 800;
-  background: linear-gradient(135deg, #fff 0%, #f0f0ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: Arial, sans-serif;
+  font-size: 120px;
+  font-weight: bold;
+  color: #2d5016;
   margin: 0;
-  letter-spacing: -2px;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
-}
-
-.tagline {
-  color: rgba(255,255,255,0.95);
-  font-size: 18px;
-  margin-top: 12px;
-  font-weight: 300;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  letter-spacing: -3px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .project-grid {
@@ -97,9 +85,9 @@ export default {
 }
 
 .project-tile {
-  background: rgba(255,255,255,0.98);
+  background: rgba(50, 90, 30, 0.85);
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.3);
   padding: 32px;
   border-radius: 16px;
   cursor: pointer;
@@ -133,12 +121,12 @@ export default {
 .project-tile h2 {
   font-size: 24px;
   margin: 0;
-  color: #333;
+  color: #fff;
   font-weight: 700;
 }
 
 .project-tile p {
-  color: #666;
+  color: rgba(255,255,255,0.9);
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
@@ -148,7 +136,7 @@ export default {
 .project-cta {
   margin-top: 16px;
   align-self: flex-start;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: rgba(40, 70, 25, 0.9);
   color: #fff;
   padding: 12px 24px;
   border-radius: 8px;
@@ -162,7 +150,7 @@ export default {
 }
 
 .project-cta.disabled {
-  background: #ccc;
+  background: rgba(100, 100, 100, 0.7);
   cursor: not-allowed;
 }
 
