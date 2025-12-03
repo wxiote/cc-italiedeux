@@ -62,7 +62,7 @@ export default {
 
 .hero {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   animation: fadeIn 0.8s ease-out;
 }
 
@@ -78,9 +78,9 @@ export default {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  max-width: 700px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  max-width: 550px;
   width: 100%;
 }
 
@@ -88,20 +88,20 @@ export default {
   background: rgba(90, 140, 75, 0.75);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.3);
-  padding: 24px;
-  border-radius: 12px;
+  padding: 18px;
+  border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   transition: all 0.3s ease;
   animation: fadeInUp 0.8s ease-out;
 }
 
 .project-tile:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 36px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
 }
 
 .project-tile.coming {
@@ -114,12 +114,12 @@ export default {
 }
 
 .project-icon {
-  font-size: 40px;
-  margin-bottom: 6px;
+  font-size: 32px;
+  margin-bottom: 4px;
 }
 
 .project-tile h2 {
-  font-size: 20px;
+  font-size: 17px;
   margin: 0;
   color: #fff;
   font-weight: 700;
@@ -127,21 +127,21 @@ export default {
 
 .project-tile p {
   color: rgba(255,255,255,0.9);
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 12px;
+  line-height: 1.4;
   margin: 0;
   flex-grow: 1;
 }
 
 .project-cta {
-  margin-top: 12px;
+  margin-top: 8px;
   align-self: flex-start;
   background: rgba(70, 110, 60, 0.75);
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 12px;
   transition: all 0.3s ease;
 }
 
