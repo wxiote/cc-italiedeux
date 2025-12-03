@@ -20,6 +20,13 @@
           <p>Carte de mes itinéraires Vélo'v à Lyon</p>
           <div class="project-cta">Explorer →</div>
         </article>
+
+        <article class="project-tile" @click="$emit('open', 'zonzon')" role="button" tabindex="0">
+          <div class="project-icon">🌍</div>
+          <h2>zonzon</h2>
+          <p>Carte mondiale en projection Equal Earth</p>
+          <div class="project-cta">Explorer →</div>
+        </article>
       </div>
     </div>
   </main>
@@ -80,7 +87,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
-  max-width: 550px;
+  max-width: 600px;
   width: 100%;
 }
 
