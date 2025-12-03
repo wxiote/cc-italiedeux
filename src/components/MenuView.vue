@@ -1,28 +1,25 @@
 <template>
   <main class="menu-landing">
-    <h1 class="landing-title">Projets — Portefeuille</h1>
-    <p class="lead">Sélectionne un projet pour l'ouvrir. Clique sur une vignette pour y accéder.</p>
+    <div class="hero">
+      <h1 class="brand">carto69</h1>
+      <p class="tagline">Cartographie interactive & visualisations géospatiales</p>
+    </div>
 
     <div class="project-grid">
       <article class="project-tile" @click="$emit('open', 'italie2')" role="button" tabindex="0">
-        <div class="project-badge">Italie 2</div>
-        <h2>Plan du centre commercial</h2>
-        <p>Visualisation multi-étages, overlays et gestion des parkings.</p>
-        <div class="project-cta">Ouvrir</div>
+        <div class="project-icon">🗺️</div>
+        <h2>Italie 2</h2>
+        <p>Plan interactif du centre commercial multi-étages</p>
+        <div class="project-cta">Explorer →</div>
       </article>
 
-      <article class="project-tile disabled" aria-disabled="true">
-        <div class="project-badge">Coming</div>
-        <h2>Autre projet</h2>
-        <p>Prototype — à venir.</p>
-        <div class="project-cta">Bientôt</div>
+      <article class="project-tile coming">
+        <div class="project-icon">🚀</div>
+        <h2>Nouveaux projets</h2>
+        <p>Bientôt disponible</p>
+        <div class="project-cta disabled">À venir</div>
       </article>
     </div>
-
-    <section class="help">
-      <h3>Hébergement</h3>
-      <p>Ce projet utilise Vite + Vue. Pour déployer rapidement, utilisez Vercel (commande `vercel` ou import depuis GitHub).</p>
-    </section>
   </main>
 </template>
 
@@ -33,13 +30,132 @@ export default {
 </script>
 
 <style scoped>
-.menu-landing { padding: 20px }
-.landing-title { font-size: 28px; margin: 0 0 6px }
-.lead { color:#555; margin-bottom:16px }
-.project-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px }
-.project-tile { background:#fff; border:1px solid #e6e6e6; padding:16px; border-radius:8px; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.04); display:flex; flex-direction:column; gap:8px }
-.project-tile.disabled { opacity:0.6; cursor:not-allowed }
-.project-badge { font-size:12px; background:#2171b5; color:#fff; display:inline-block; padding:4px 8px; border-radius:4px }
-.project-cta { margin-top:auto; align-self:flex-end; background:#2171b5; color:#fff; padding:8px 12px; border-radius:6px }
-.help { margin-top:18px; font-size:14px; color:#444 }
+.menu-landing {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.brand {
+  font-size: 72px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #f0f0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  letter-spacing: -2px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.tagline {
+  color: rgba(255,255,255,0.9);
+  font-size: 18px;
+  margin-top: 12px;
+  font-weight: 300;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.project-tile {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 32px;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.project-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+}
+
+.project-tile.coming {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.project-tile.coming:hover {
+  transform: none;
+}
+
+.project-icon {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.project-tile h2 {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+  font-weight: 700;
+}
+
+.project-tile p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.project-cta {
+  margin-top: 16px;
+  align-self: flex-start;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.project-tile:hover .project-cta:not(.disabled) {
+  transform: translateX(4px);
+}
+
+.project-cta.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>
